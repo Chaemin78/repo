@@ -12,8 +12,8 @@ from openai import OpenAI
 # ==============================
 st.set_page_config(page_title="Solar Chat Room", page_icon="☀️", layout="centered")
 
-# 분류기 로드 (KcELECTRA fine-tuned)
-MODEL_DIR = r"C:\Users\dlaco\OneDrive\바탕 화면\streamlit\kcelectra-toxic-best"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.join(BASE_DIR, "kcelectra-toxic-best")
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 # 토크나이저는 기존처럼 디렉토리에서 로드
